@@ -17,7 +17,7 @@ function App() {
       const response = await axios.get(API_URL);
       setTasks(response.data);
     } catch (error) {
-      console.error("Error fetching tasks:", error);
+      console.error("Erro ao dar fetch tasks:", error);
     }
   };
 
@@ -27,7 +27,7 @@ function App() {
       setNewTask("");
       fetchTasks();
     } catch (error) {
-      console.error("Error adding task:", error);
+      console.error("Erro ao adicionar task:", error);
     }
   };
 
@@ -36,7 +36,7 @@ function App() {
       await axios.put(`${API_URL}/${id}`, { status });
       fetchTasks();
     } catch (error) {
-      console.error("Error updating task:", error);
+      console.error("Erro ao atualizar task:", error);
     }
   };
 
@@ -45,7 +45,7 @@ function App() {
       await axios.delete(`${API_URL}/${id}`);
       fetchTasks();
     } catch (error) {
-      console.error("Error deleting task:", error);
+      console.error("Erro ao deletar task:", error);
     }
   };
 
@@ -56,7 +56,7 @@ function App() {
         type="text"
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
-        placeholder="Digite uma nova tarefa"
+        placeholder="Digite uma nova task"
       />
       <button onClick={addTask}>Adicionar</button>
       <ul>
